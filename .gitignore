@@ -359,4 +359,5 @@ MigrationBackup/
 .ionide/
 
 # Fody - auto-generated XML schema
-FodyWeavers.xsdMAS.csproj
+FodyWeavers.xsd
+MAS.csproj
