@@ -67,9 +67,7 @@ namespace MAS.auction
                     AgentBids.Push(bid);
                     Output.print($"New bid was made by:{bid.BidAgent.AgentId} with price: {bid.BidPrice} at Auction: {Id}");
                 }
-
             }
-
         }
         public void CheckNewBids()
         {
@@ -108,13 +106,11 @@ namespace MAS.auction
             Output.print($"The Start price of the product: {ProductToSale.StartPrice} and minimum raise is: {ProductToSale.MinPriceRaise}");
             Output.print("-------------------------------------------------------------------");
             AuctionStatus = Status.Running;
-            //StartAuction?.DynamicInvoke(this);
             Utils.RunEventAsync(StartAuction, this);
 
         }
         public void CallForNewBid()
         {
-            //NewBidEvent?.DynamicInvoke(this);
             Utils.RunEventAsync(NewBidEvent, this);
         }
         public void AnnounceWinner()
