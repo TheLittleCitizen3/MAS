@@ -31,5 +31,6 @@ namespace MAS.MAS
         {
             auction.NewBidEvent += Agent.MakeBid;
         }
+
     }
 }

@@ -8,7 +8,7 @@ namespace MAS
     {
         public IAgent BidAgent { get; set; }
         public DateTime Bidtime { get; set; }
-        public double BidPrice { get; set; }
+        public decimal BidPrice { get; set; }
 
     }
 }

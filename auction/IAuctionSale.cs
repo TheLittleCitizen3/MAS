@@ -14,9 +14,14 @@ namespace MAS
         public ConcurrentStack<IBid> AgentBids { get; set; }
         public List<IAgent> AuctionAgents { get; set; }
         public void NewBid(IBid bid);
-        
+        public void StartAuctionToAgents();
+        public void CheckNewBids();
+        public void AnnounceWinner();
+
+
         public event AuctionEvent StartAuction;
         public event AuctionEvent NewBidEvent;
+        
 
     }
 }

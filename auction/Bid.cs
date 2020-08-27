@@ -8,9 +8,9 @@ namespace MAS.auction
     {
         public IAgent BidAgent { get ; set ; }
         public DateTime Bidtime { get ; set ; }
-        public double BidPrice { get ; set ; }
+        public decimal BidPrice { get ; set ; }
 
-        public Bid(IAgent bidAgent, double bidPrice)
+        public Bid(IAgent bidAgent, decimal bidPrice)
         {
             BidAgent = bidAgent;
             Bidtime = DateTime.Now;

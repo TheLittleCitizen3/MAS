@@ -8,8 +8,8 @@ namespace MAS
     {
         public string ProductName { get; set; }
         public string ProductDescription { get; set; }
-        public double StartPrice { get; set; }
-        public double MinPriceRaise { get; set; }
+        public decimal StartPrice { get; set; }
+        public decimal MinPriceRaise { get; set; }
         public int Id { get; set; }
     }
 }
