@@ -16,6 +16,7 @@ namespace MAS.MAS
         {
             if (Agent.ShouldJoinAuction(auction))
             {
+                auction.AuctionAgents.Add(Agent);
                 Agent.EnterAuction(auction);
                 AddToStartAuction(auction);
                 AddToNewBid(auction);

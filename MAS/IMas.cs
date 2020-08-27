@@ -10,6 +10,7 @@ namespace MAS
     {
         public List<IAuctionSale> Auctions { get; set; }
         public List<IAgent> Agents { get; set; }
+        public void Start();
         public void AnnaounceAuction(IAuctionSale auction);
         public void StartAuction(IAuctionSale auction);
         public IAuctionSale GetAuctionSchedule();

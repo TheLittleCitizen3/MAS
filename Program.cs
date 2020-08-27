@@ -22,15 +22,19 @@ namespace MAS
                 auctionSales.Add(new AuctionSale(structfactory.GetStructure()));
             }
             IMas mas = new Mas(auctionSales, agents);
-            
+
+            /*
             Parallel.ForEach(auctionSales, (auction) =>
             {
-                mas.AnnaounceAuction(auction);
-                auction.StartAuctionToAgents();
-                auction.CheckNewBids();
-                auction.AnnounceWinner();
-
-            });
+            mas.AnnaounceAuction(auction);
+                if (auction.AuctionAgents.Count > 0)
+                {
+                    auction.RunAuction();
+                }
+            
+            
+             }); */
+            mas.Start();
             
 
 

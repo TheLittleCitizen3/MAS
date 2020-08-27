@@ -10,7 +10,7 @@ namespace MAS.factories
         public IAgent GetAgent()
         {
             Random r = new Random();
-            decimal moneyBalance = (decimal)r.Next(500000, 5000000);
+            decimal moneyBalance = (decimal)r.Next(1, 100);
             return new Agent(moneyBalance);
         }
     }

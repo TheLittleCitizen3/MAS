@@ -24,19 +24,13 @@ namespace MAS.agent
         {
             RegisteredAuctions.Add(auctionSale);
         }
-
-
         public void MakeBid(IAuctionSale auctionSale)
         {
-            if (IsMakeBid(auctionSale))
+            if (IsMakeBid(auctionSale) && auctionSale.AuctionStatus == Status.Running)
             {
-                Console.WriteLine($"gonna make bid by: {AgentId}");
                 auctionSale.NewBid(new Bid(this, GetLastBidPrice(auctionSale) + auctionSale.ProductToSale.MinPriceRaise));
             }
-            else
-            {
-                Console.WriteLine($"not gonna make bid {AgentId}");
-            }
+
         }
         public void ChargeMoney(decimal price)
         {
@@ -46,22 +40,31 @@ namespace MAS.agent
         {
             CollectedProducts.Add(product);
         }
-
         private bool IsMakeBid(IAuctionSale auction)
         {
-
-            return GetLastBidPrice(auction) < MoneyBalance;
+            IAgent lastBidAgent = GetLastBidaAgent(auction);
+            if (GetLastBidPrice(auction) < MoneyBalance && lastBidAgent != this)
+            {
+                bool makebid = (new Random()).Next(100) > 45;
+                return makebid ;
+            }
+            return false;
         }
         public bool ShouldJoinAuction(IAuctionSale auction)
         {
             return auction.ProductToSale.StartPrice < MoneyBalance;
         }
-
         private decimal GetLastBidPrice(IAuctionSale auctionSale)
         {
             IBid bid;
             auctionSale.AgentBids.TryPeek(out bid);
             return bid.BidPrice;
+        }
+        private IAgent GetLastBidaAgent(IAuctionSale auctionSale)
+        {
+            IBid bid;
+            auctionSale.AgentBids.TryPeek(out bid);
+            return bid.BidAgent;
         }
     }
 }

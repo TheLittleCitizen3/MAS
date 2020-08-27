@@ -23,7 +23,7 @@ namespace MAS.factories
             string productName = roomsNames[r.Next(3)];
             List<string> roomsDesc = new List<string>() { "Office with sea view", "Living house", "old appartment" };
             string productDescription = roomsDesc[r.Next(2)];
-            decimal startPrice = (decimal)r.Next(10000, 1000000);
+            decimal startPrice = (decimal)r.Next(1, 50);
             decimal minPriceRaise = startPrice / 10;
             int id = r.Next(1, 10000);
             return new Structure(rooms, isAccessible, toiletssroom, dinningRooms, productName, productDescription, startPrice,minPriceRaise, id);
