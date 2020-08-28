@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MAS.product
+﻿namespace MAS.product
 {
     class Room : IRoom
     {

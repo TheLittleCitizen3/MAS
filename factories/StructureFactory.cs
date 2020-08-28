@@ -1,7 +1,6 @@
 ﻿using MAS.product;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace MAS.factories
 {
@@ -26,7 +25,7 @@ namespace MAS.factories
             decimal startPrice = (decimal)r.Next(1, 50);
             decimal minPriceRaise = startPrice / 10;
             int id = r.Next(1, 10000);
-            return new Structure(rooms, isAccessible, toiletssroom, dinningRooms, productName, productDescription, startPrice,minPriceRaise, id);
+            return new Structure(rooms, isAccessible, toiletssroom, dinningRooms, productName, productDescription, startPrice, minPriceRaise, id);
         }
     }
 }

@@ -1,7 +1,4 @@
 ﻿using MAS.IO;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace MAS.MAS
 {
@@ -22,7 +19,7 @@ namespace MAS.MAS
                 AddToNewBid(auction);
                 Output.print($"Agent: {Agent.AgentId} joinned auction: {auction.Id}");
             }
-            
+
         }
         private void AddToStartAuction(IAuctionSale auction)
         {

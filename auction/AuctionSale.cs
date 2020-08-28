@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Net.NetworkInformation;
-using System.Text;
 using System.Threading;
 
 namespace MAS.auction
@@ -54,7 +52,7 @@ namespace MAS.auction
             {
                 Output.print($"There Is No Winner in Auction: {Id}, no Bids Where Made");
             }
-            
+
         }
         public void NewBid(IBid bid)
         {
@@ -71,7 +69,7 @@ namespace MAS.auction
         }
         public void CheckNewBids()
         {
-            
+
             if (getLastBid() != CurrentBid)
             {
                 CurrentBid = getLastBid();
@@ -81,7 +79,7 @@ namespace MAS.auction
             {
                 AuctionStatus = Status.FinalCall;
             }
-            
+
         }
         public void FinalCall()
         {
