@@ -1,15 +1,13 @@
 ﻿using MAS.auction;
-using MAS.IO;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace MAS.agent
 {
     class Agent : IAgent
     {
-        public int AgentId { get ; set ; }
-        public decimal MoneyBalance { get; set ; }
+        public int AgentId { get; set; }
+        public decimal MoneyBalance { get; set; }
         public List<IAuctionSale> RegisteredAuctions { get; set; }
         public List<IProduct> CollectedProducts { get; set; }
 
@@ -46,7 +44,7 @@ namespace MAS.agent
             if (GetLastBidPrice(auction) < MoneyBalance && lastBidAgent != this)
             {
                 bool makebid = (new Random()).Next(100) > 45;
-                return makebid ;
+                return makebid;
             }
             return false;
         }

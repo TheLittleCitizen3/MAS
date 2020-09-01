@@ -1,8 +1,6 @@
-﻿using MAS.auction;
-using MAS.IO;
+﻿using MAS.IO;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace MAS.MAS
@@ -13,7 +11,7 @@ namespace MAS.MAS
         public List<IAgent> Agents { get; set; }
         public event RegisterAgents AnouncceAgents;
 
-        public Mas(List<IAuctionSale> auctions,List<IAgent> agents)
+        public Mas(List<IAuctionSale> auctions, List<IAgent> agents)
         {
             Auctions = auctions;
             Agents = agents;
@@ -60,11 +58,7 @@ namespace MAS.MAS
             {
                 Output.print($"No one registered Auction: {auction.Id}");
             }
-            
-        }
-        public IAuctionSale GetAuctionSchedule()
-        {
-            throw new NotImplementedException();
+
         }
     }
 }

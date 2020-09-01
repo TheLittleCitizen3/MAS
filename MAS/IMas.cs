@@ -1,7 +1,4 @@
-﻿using MAS.agent;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace MAS
 {
@@ -13,9 +10,8 @@ namespace MAS
         public void Start();
         public void AnnaounceAuction(IAuctionSale auction);
         public void StartAuction(IAuctionSale auction);
-        public IAuctionSale GetAuctionSchedule();
         public event RegisterAgents AnouncceAgents;
-        
+
 
 
 

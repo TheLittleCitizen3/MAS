@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Net.NetworkInformation;
-using System.Text;
 using System.Threading;
 
 namespace MAS.auction
@@ -54,7 +52,7 @@ namespace MAS.auction
             {
                 Output.print($"There Is No Winner in Auction: {Id}, no Bids Where Made");
             }
-            
+
         }
         public void NewBid(IBid bid)
         {
@@ -67,13 +65,11 @@ namespace MAS.auction
                     AgentBids.Push(bid);
                     Output.print($"New bid was made by:{bid.BidAgent.AgentId} with price: {bid.BidPrice} at Auction: {Id}");
                 }
-
             }
-
         }
         public void CheckNewBids()
         {
-            
+
             if (getLastBid() != CurrentBid)
             {
                 CurrentBid = getLastBid();
@@ -83,7 +79,7 @@ namespace MAS.auction
             {
                 AuctionStatus = Status.FinalCall;
             }
-            
+
         }
         public void FinalCall()
         {
@@ -108,13 +104,11 @@ namespace MAS.auction
             Output.print($"The Start price of the product: {ProductToSale.StartPrice} and minimum raise is: {ProductToSale.MinPriceRaise}");
             Output.print("-------------------------------------------------------------------");
             AuctionStatus = Status.Running;
-            //StartAuction?.DynamicInvoke(this);
             Utils.RunEventAsync(StartAuction, this);
 
         }
         public void CallForNewBid()
         {
-            //NewBidEvent?.DynamicInvoke(this);
             Utils.RunEventAsync(NewBidEvent, this);
         }
         public void AnnounceWinner()
