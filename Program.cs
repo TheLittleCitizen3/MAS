@@ -22,9 +22,6 @@ namespace MAS
             }
             IMas mas = new Mas(auctionSales, agents);
             mas.Start();
-
-
-
         }
     }
 }
